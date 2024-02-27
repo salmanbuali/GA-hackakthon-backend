@@ -2,7 +2,7 @@ const express = require('express')
 const logger = require('morgan')
 const cors = require('cors')
 
-// const AuthRouter = require('./routes/AuthRouter')
+const EventsRouter = require('./routes/Events')
 const RidesRouter = require('./routes/Rides')
 
 const PORT = process.env.PORT || 3001
@@ -16,7 +16,7 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-// app.use('/auth', AuthRouter)
+app.use('/events', EventsRouter)
 app.use('/rides', RidesRouter)
 
 app.use('/', (req, res) => {
