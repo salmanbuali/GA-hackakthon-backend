@@ -21,7 +21,7 @@ const CreateEvent = async (req, res) => {
 const DeleteEvent = async (req, res) => {
   try {
     await Event.deleteOne({ _id: req.params.event_id })
-    res.send({ msg: 'Ride Deleted', payload: req.params.event_id, status: 'Ok' })
+    res.send({ msg: 'event Deleted', payload: req.params.event_id, status: 'Ok' })
   } catch (error) {
     throw error
   }
